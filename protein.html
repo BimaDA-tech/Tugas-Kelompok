@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Health Tools</title>
+        <link rel="stylesheet" href="protein.css">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="container header-content">
+                <div class="search-container">
+                    <img alt="Healthify logo" src="./Assets/healthify.png">
+                    <input placeholder="Cari Healthify" type="text">
+                </div>
+                <nav>
+                    <a href="#">Kategori</a>
+                    <a href="#">Cek Kesehatan</a>
+                    <a href="#">Komunitas</a>
+                    <img alt="User avatar" src="https://placehold.co/40x40">
+                </nav>
+            </div>
+        </header>
+
+        <main class="container main">
+            <div class="content">
+                <div class="breadcrumb">
+                    <img
+                        src="https://storage.googleapis.com/a1aa/image/S-whKcYX3tedtspYu4VH5X29weW6kUZNWxMhMNTXVr8.jpg"
+                        alt="Breadcrumb icon"/>
+                    <span class="ml-2 text-gray-600">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">Alat Cek Kesehatan</a>
+                        &gt; Kalkulator Kebutuhan Protein
+                    </span>
+                </div>
+                <h1>Kalkulator Kebutuhan Protein</h1>
+                <p>Berapa banyak protein yang Anda butuhkan setiap hari?</p>
+                <div class="info">
+                    <img
+                        src="https://storage.googleapis.com/a1aa/image/iYUQX3XcdITmkHKS12RiPOWH_n9cRYxYESaC65VniRo.jpg"
+                        alt="Doctor's image"/>
+                    <span>Fakta medis diperiksa oleh dr. Angela Dalimarta, Sp.GK • 22/06/2024</span>
+                </div>
+                <div class="form">
+                    <div class="date">
+                        <label for="dob">Tanggal Lahir Anda</label>
+                        <input type="date" id="dob" placeholder="DD/MM/YYYY"/>
+                    </div>
+                    <div class="gender">
+                        <label for="gender">Apa jenis kelamin Anda?</label>
+                        <select id="gender">
+                            <option value="" disabled="disabled" selected="selected">Pilih</option>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-control">
+                            <label for="height">Berapa tinggi Anda?</label>
+                            <input type="text" id="height" placeholder="Contoh: 160"/>
+                        </div>
+                        <div class="form-control">
+                            <label for="weight">Berapa berat badan Anda?</label>
+                            <input class="berat" type="text" id="weight" placeholder="Contoh: 60"/>
+                        </div>
+                    </div>
+                    <button onclick="calculateProtein()">Hitung</button>
+
+                    <div id="result-card" class="result-card hidden">
+                        <div class="card-content">
+                            <div class="result-text">
+                                <h2>Hasil Perhitungan</h2>
+                                <p>
+                                    <strong>Total protein yang perlu Anda konsumsi:</strong>
+                                </p>
+                                <p>
+                                    <span id="protein-value">-</span>
+                                    gram (<span id="protein-kcal">-</span>
+                                    kcal)</p>
+                                <p>
+                                    <em>Pastikan asupan protein Anda cukup untuk menjaga kesehatan tubuh.</em>
+                                </p>
+                                <h3>Saran Nutrisi</h3>
+                                <p id="nutrition-advice"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <div class="note-header">
+                        <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                        <span>Catatan</span>
+                    </div>
+                    <p>Kalkulator ini bukanlah sebuah alat diagnosis medis ataupun pengganti
+                        konsultasi dokter spesialis/nutrisionis. Alat ini hanya untuk skrining yang bisa
+                        Anda lakukan mandiri, sebelum memeriksakan diri ke dokter. Setelah melihat hasil
+                        ini atau membaca artikel lain di Hello Sehat, sebaiknya tetap konsultasi ke
+                        dokter agar tahu lebih pasti kondisi kesehatan Anda saat ini. Hasil kalkulator
+                        BMI ini tidak bisa digunakan jika anda memiliki gangguan pola makan.</p>
+                </div>
+                <div class="info">
+                    <div class="info-header">
+                        <i class="fas fa-info-circle text-blue-500"></i>
+                        <span>Info</span>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="faq-item">
+                        <span>Apa itu BMI (IMT)?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-answer hidden">
+                        <p>Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh
+                            (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang berdasarkan berat
+                            dan tinggi badan.</p>
+                    </div>
+                    <div class="faq-item">
+                        <span>Bagaimana cara penilaian BMI?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Mengapa saya harus mengukur BMI?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Apakah BMI yang tinggi menimbulkan risiko kesehatan yang serius?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Obesitas: Apa saja faktor risikonya?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Kekurangan berat badan: Apa faktor risikonya?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Apakah BMI menjadi indikator yang baik dalam mengukur lemak tubuh?</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                    <div class="faq-item">
+                        <span>Sumber dan Referensi</span>
+                        <i class="fas fa-plus toggle-btn"></i>
+                    </div>
+                </div>
+
+                <div class="articles">
+                    <h2>Artikel Terkait</h2>
+                    <div class="article-container">
+                        <div class="article-card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhwWLXy94DhlUdkM3KP95VDwbhuDI5oDQ2Q&s" alt="Artikel 1">
+                            <h3>5 Gaya Hidup Sehat untuk Jantung Sehat</h3>
+                            <p>Salah satu kunci untuk hidup sehat dan panjang umur adalah dengan menjaga jantung tetap sehat. Untuk mendapatkannya, ternyata enggak susah kok. Malah bisa dimulai dengan menerapkan kebiasaan sehari-hari yang menyehatkan. Yuk dicoba!</p>
+                            <a href="https://www.halodoc.com/artikel/5-gaya-hidup-sehat-untuk-jantung-sehat" target="_blank">Baca Selengkapnya</a>
+                        </div>
+                        <div class="article-card">
+                            <img src="https://cdn.hellosehat.com/wp-content/uploads/2018/06/0de779a6-kebutuhan-protein-untuk-otot.jpg?w=640&q=100" alt="Artikel 2">
+                            <h3>Kebutuhan Protein untuk Membentuk Otot dan Pilihan Makanannya</h3>
+                            <p>Banyak orang mengonsumsi protein karena manfaatnya untuk membentuk otot. Lantas, apa saja jenis makanan dan seberapa banyak kebutuhan protein yang harus Anda penuhi? Berikut penjelasannya.</p>
+                            <a href="https://hellosehat.com/nutrisi/gizi-olahraga/kebutuhan-protein-untuk-otot/" target="_blank">Baca Selengkapnya</a>
+                        </div>
+                        <div class="article-card">
+                            <img src="https://cdn.hellosehat.com/wp-content/uploads/2016/10/b72d23d9-kalori-untuk-diet.jpg?w=640&q=100" alt="Artikel 3">
+                            <h3>Berapa Minimal Kalori yang Harus Dipenuhi untuk Diet?</h3>
+                            <p>Menjaga asupan kalori sangat penting bagi siapa saja yang ingin menurunkan berat badan. Namun, berapa kalori sehari yang dibutuhkan untuk diet? Jawabannya tergantung pada berbagai faktor, seperti usia, jenis kelamin, tingkat aktivitas, dan tujuan penurunan berat badan.</p>
+                            <a href="https://hellosehat.com/nutrisi/berat-badan-turun/berapa-minimal-kalori-yang-harus-dipenuhi-saat-diet/" target="_blank">Baca Selengkapnya</a>
+                        </div>
+                        <div class="article-card">
+                            <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1609415028/attached_image/kalori-kunci-berat-badan-sehat-0-alodokter.jpg" alt="Artikel 3">
+                            <h3>Mengenali Kalori Sebagai Kunci Berat Badan Sehat</h3>
+                            <p>Kalori merupakan nilai yang menunjukkan jumlah energi yang diperoleh dari makanan dan minuman. Memenuhi kebutuhan kalori setiap harinya sangat penting dilakukan agar Anda bisa melakukan berbagai aktivitas, selain tentunya agar fungsi dan proses di dalam tubuh Anda berjalan dengan baik.</p>
+                            <a href="https://www.alodokter.com/kalori-kunci-berat-badan-sehat" target="_blank">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-section about">
+                        <h2>Tentang Kami</h2>
+                        <p>Healthify adalah platform kesehatan yang didedikasikan untuk membantu Anda
+                            mencapai gaya hidup yang lebih sehat dan seimbang. Kami percaya bahwa kesehatan
+                            adalah aset terpenting dalam hidup, dan kami berkomitmen untuk memberikan
+                            informasi, alat, dan dukungan yang Anda butuhkan untuk mencapai tujuan kesehatan
+                            Anda.</p>
+                    </div>
+                    <div class="footer-section links">
+                        <h2>Link Cepat</h2>
+                        <ul>
+                            <li>
+                                <a href="#">Beranda</a>
+                            </li>
+                            <li>
+                                <a href="#">Tentang</a>
+                            </li>
+                            <li>
+                                <a href="#">Layanan</a>
+                            </li>
+                            <li>
+                                <a href="#">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section contact">
+                        <h2>Hubungi Kami</h2>
+                        <p>Email: Healthify@gmail.com</p>
+                        <p>Telepon: (021) 123-4567</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Healthify. Semua hak dilindungi.</p>
+                </div>
+            </footer>
+
+            <script src="protein.js"></script>
+
+        </body>
+    </html>

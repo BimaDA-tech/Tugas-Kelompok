@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tools</title>
+    <link rel="stylesheet" href="bmi.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="search-container">
+                <img alt="Healthify logo" src="./Assets/healthify.png">
+                <input placeholder="Cari Healthify" type="text">
+            </div>
+            <nav>
+                <a href="#">Kategori</a>
+                <a href="#">Cek Kesehatan</a>
+                <a href="#">Komunitas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main">
+        <div class="content">
+            <div class="breadcrumb">
+                <img src="https://storage.googleapis.com/a1aa/image/S-whKcYX3tedtspYu4VH5X29weW6kUZNWxMhMNTXVr8.jpg" alt="Breadcrumb icon" />
+                <<span class="ml-2 text-gray-600">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">Alat Cek Kesehatan</a> &gt; Kalkulator BMI
+                </span>                
+            </div>
+            <h1>Kalkulator BMI</h1>
+            <p>Apakah berat badan Anda sudah ideal?</p>
+            <div class="info">
+                <img src="https://storage.googleapis.com/a1aa/image/iYUQX3XcdITmkHKS12RiPOWH_n9cRYxYESaC65VniRo.jpg" alt="Doctor's image" />
+                <span>Fakta medis diperiksa oleh dr. Sutanto, Sp.GK • 2/09/2024</span>
+            </div>
+            <div class="form">
+                <div class="date">
+                    <label for="dob">Tanggal Lahir Anda</label>
+                    <input type="date" id="dob" placeholder="DD/MM/YYYY" />
+                </div>
+                <div class="gender">
+                    <label for="gender">Apa jenis kelamin Anda?</label>
+                    <select id="gender">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="male">Laki-laki</option>
+                        <option value="female">Perempuan</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="height">Berapa tinggi Anda?</label>
+                        <input type="text" id="height" placeholder="Contoh: 160" />
+                    </div>
+                    <div class="form-control">
+                        <label for="weight">Berapa berat badan Anda?</label>
+                        <input class="berat" type="text" id="weight" placeholder="Contoh: 60" />
+                    </div>
+        </div>
+        <button onclick="calculateBMI()">Hitung</button>
+                    <div class="result-container" id="resultContainer" style="display: none;">
+                        <p id="bmiResultText"></p>
+                    </div>
+        <div class="note">
+            <div class="note-header">
+                <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                <span>Catatan</span>
+            </div>
+            <p>Kalkulator ini bukanlah sebuah alat diagnosis medis ataupun pengganti konsultasi dokter spesialis/nutrisionis. Alat ini hanya untuk skrining yang bisa Anda lakukan mandiri, sebelum memeriksakan diri ke dokter. Setelah melihat hasil ini atau membaca artikel lain di Hello Sehat, sebaiknya tetap konsultasi ke dokter agar tahu lebih pasti kondisi kesehatan Anda saat ini. Hasil kalkulator BMI ini tidak bisa digunakan jika anda memiliki gangguan pola makan.</p>
+        </div>
+        <div class="info">
+            <div class="info-header">
+                <i class="fas fa-info-circle text-blue-500"></i>
+                <span>Info</span>
+                </div>
+            </div>
+
+        <div class="faq">
+            <div class="faq-item">
+                <span>Apa itu BMI (IMT)?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-answer hidden">
+                <p>Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang berdasarkan berat dan tinggi badan.</p>
+            </div>
+            <div class="faq-item">
+                <span>Bagaimana cara penilaian BMI?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Mengapa saya harus mengukur BMI?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Apakah BMI yang tinggi menimbulkan risiko kesehatan yang serius?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Obesitas: Apa saja faktor risikonya?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Kekurangan berat badan: Apa faktor risikonya?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Apakah BMI menjadi indikator yang baik dalam mengukur lemak tubuh?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Sumber dan Referensi</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+        </div>
+
+        <div class="articles">
+            <h2>Artikel Terkait</h2>
+            <div class="article-container">
+                <div class="article-card">
+                    <img src="./Assets/artikel1.png">
+                    <h3>Pola Hidup Aktif dan Berolahraga - Kunci Hidup Sehat dan Bugar</h3>
+                    <p>Menjaga gaya hidup aktif dengan rutin berolahraga dapat meningkatkan kebugaran tubuh, memperkuat jantung, dan mengurangi risiko penyakit kardiovaskular. Temukan berbagai cara untuk tetap aktif dan sehat setiap hari.</p>
+                    <a href="https://www.zerostunting.com/article/42d21ce8-242e-41b4-a759-69b615d7a89d" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://ik.imagekit.io/waters2021/sehataqua/uploads/20211228153546_original.jpg?tr=w-1600,h-900,q-80,fo-auto,f-auto" alt="Artikel 2">
+                    <h3>Makanan Bergizi dan Jenis Nutrisi untuk Tubuh Lebih Sehat</h3>
+                    <p>Mengonsumsi makanan bergizi menjadi salah satu langkah penting untuk mewujudkan pola hidup sehat. Sebab, tubuh memerlukan asupan nutrisi seimbang untuk dapat berfungsi optimal..</p>
+                    <a href="https://www.allianz.co.id/explore/makanan-bergizi-dan-jenis-nutrisi-untuk-tubuh-lebih-sehat.html" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://kesmas-id.com/wp-content/uploads/2024/11/Kurangnya-Aktivitas-Fisik-dapat-Tingkatkan-Risiko-Penyakit-Tidak-Menular-PTM-1024x640.jpg" alt="Artikel 3">
+                    <h3>Kurangnya Aktivitas Fisik dapat Tingkatkan Risiko Penyakit Tidak Menular (PTM)</h3>
+                    <p>urangnya aktivitas fisik merupakan faktor risiko utama terjadinya penyakit tidak menular. Sedangkan yang terjadi di Indonesia 1 / 4 penduduk termasuk golongan kurang aktif dalam melakukan aktivitas fisik.</p>
+                    <a href="https://kesmas-id.com/kurangnya-aktivitas-fisik-dapat-tingkatkan-risiko-penyakit-tidak-menular-ptm/" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://ayosehat.kemkes.go.id/imagex/content/11b1759c2f9c342e1c0a80947b7d7461.webp" alt="Artikel 3">
+                    <h3>Cara Menjaga Kesehatan Jantung dengan Aktivitas Fisik</h3>
+                    <p>Setiap kali bergerak, kita sebenarnya memberi kekuatan pada teman setia dalam tubuh kita, yaitu jantung. Fakta menariknya, jantung kita suka berolahraga! Dalam tulisan ini, kita akan membahas mengapa berolahraga penting untuk menjaga kesehatan jantung dan bagaimana kita bisa melakukannya dengan mudah.</p>
+                    <a href="https://ayosehat.kemkes.go.id/cara-menjaga-kesehatan-jantung" target="_blank">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Tentang Kami</h2>
+                <p>Healthify adalah platform kesehatan yang didedikasikan untuk membantu Anda mencapai gaya hidup yang lebih sehat dan seimbang. Kami percaya bahwa kesehatan adalah aset terpenting dalam hidup, dan kami berkomitmen untuk memberikan informasi, alat, dan dukungan yang Anda butuhkan untuk mencapai tujuan kesehatan Anda.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Link Cepat</h2>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Hubungi Kami</h2>
+                <p>Email: Healthify@gmail.com</p>
+                <p>Telepon: (021) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Healthify. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="bmi.js"></script>
+
+
+</body>
+</html>

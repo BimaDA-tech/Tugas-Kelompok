@@ -1,0 +1,235 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9FAFB;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.search-container input {
+    border: 1px solid #E5E7EB;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    width: 320px;
+}
+
+nav a {
+    color: #4B5563;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+nav img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+main {
+    padding: 32px 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.popular-tools, .all-tools {
+    margin-bottom: 32px;
+}
+
+.popular-tools .tools-container, .all-tools .tools-container {
+    background-color: #32e61b;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+
+}
+
+.tool-card {
+    background-color: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Susun elemen secara vertikal */
+    justify-content: space-between; /* Pastikan tombol tetap di bawah */
+    text-align: left; /* Pastikan teks sejajar ke kiri */
+    min-height: 100%; /* Pastikan tinggi card konsisten */
+}
+
+.tool-card button {
+    background-color: #3B82F6;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    align-self: flex-end; /* Pindahkan tombol ke kanan */
+    margin-top: auto; /* Pastikan tombol tetap di bawah */
+}
+
+
+.tool-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.tool-card p {
+    color: #6B7280;
+    margin-bottom: 16px;
+}
+
+.tool-card button {
+    background-color: #3B82F6;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+
+.container2 h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.container2 p {
+    color: #4b5563;
+    margin-bottom: 16px;
+}
+.container2 .tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.container2 .tabs a {
+    color: #4b5563;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+.container2 .tabs a.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+}
+.container2 h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.container2 .cardar {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.container2 .cardar h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+.container2 .cardar p {
+    color: #4b5563;
+    margin: 0;
+}
+.container2 .cardar a {
+    color: #2563eb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.container2 .cardar a i {
+    margin-left: 8px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 10px 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1dd43b;
+}

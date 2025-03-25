@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tools</title>
+    <link rel="stylesheet" href="rhr.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="search-container">
+                <img alt="Healthify logo" src="./Assets/healthify.png">
+                <input placeholder="Cari Healthify" type="text">
+            </div>
+            <nav>
+                <a href="#">Kategori</a>
+                <a href="#">Cek Kesehatan</a>
+                <a href="#">Komunitas</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="container main">
+        <div class="content">
+            <div class="breadcrumb">
+                <img src="https://storage.googleapis.com/a1aa/image/S-whKcYX3tedtspYu4VH5X29weW6kUZNWxMhMNTXVr8.jpg" alt="Breadcrumb icon" />
+                <span class="ml-2 text-gray-600">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">Alat Cek Kesehatan</a> &gt; Kalkulator Detak Jantung (RHR)
+                </span>                
+            </div>
+            <h1>Kalkulator Detak Jantung Istirahat</h1>
+            <p>Hitung dan pahami klasifikasi detak jantung istirahat Anda</p>
+            <div class="info">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTuiWULvuw4qgy5FMhVkB-p3cZJxXyMcw6OQ&s" alt="Doctor's image" />
+                <span>Fakta medis diperiksa oleh dr. Andini Sari, Sp.GK • 3/01/2025</span>
+            </div>
+            <div class="form">
+                <div class="date">
+                    <label for="dob">Tanggal Lahir Anda</label>
+                    <input type="date" id="dob" placeholder="DD/MM/YYYY" />
+                </div>
+                <div class="gender">
+                    <label for="gender">Apa jenis kelamin Anda?</label>
+                    <select id="gender">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="male">Laki-laki</option>
+                        <option value="female">Perempuan</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="rhr">Detak jantung istirahat Anda (bpm)</label>
+                        <input type="number" id="rhr" placeholder="Masukkan detak jantung..." />
+                    </div>
+                    
+                    <div class="form-control"><label for="activity-level">Tingkat Aktivitas Fisik:</label>
+                        <select class="aktivitas" id="activity-level" name="activity-level">
+                            <option value="1.2">🏠 Gaya hidup tidak aktif (tidak olahraga)</option>
+                            <option value="1.375">🚶‍♂️ Olahraga ringan (1-2 hari tiap minggu)</option>
+                            <option value="1.55">🏃‍♂️ Olahraga sedang (3-4 hari tiap minggu)</option>
+                            <option value="1.725">💪 Sangat aktif (6-7 hari tiap minggu)</option>
+                            <option value="1.9">🏋️‍♂️ Ekstrem (Latihan berat setiap hari)</option>
+                        </select>
+                        </div>
+        </div>
+        <button onclick="calculateRHR()">Hitung</button>
+        <div id="result-container" class="hidden">
+            <h2>Hasil Perhitungan</h2>
+            <p><strong>Detak jantung istirahat (RHR) Anda:</strong> <span id="classification"></span></p>
+            <p><strong>Zona detak jantung seharusnya:</strong> <span id="heart-zone"></span> bpm</p>
+            <p><strong>Denyut jantung maksimum seharusnya:</strong> <span id="max-heart-rate"></span> bpm</p>
+            
+            <h3>Penjelasan</h3>
+            <p id="explanation"></p>
+            
+            <h3>Saran</h3>
+            <p id="advice"></p>
+        </div>
+        
+        <div class="note">
+            <div class="note-header">
+                <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                <span>Catatan</span>
+            </div>
+            <p>Kalkulator ini bukanlah sebuah alat diagnosis medis ataupun pengganti konsultasi dokter spesialis/nutrisionis. Alat ini hanya untuk skrining yang bisa Anda lakukan mandiri, sebelum memeriksakan diri ke dokter. Setelah melihat hasil ini atau membaca artikel lain di Hello Sehat, sebaiknya tetap konsultasi ke dokter agar tahu lebih pasti kondisi kesehatan Anda saat ini. Hasil kalkulator BMI ini tidak bisa digunakan jika anda memiliki gangguan pola makan.</p>
+        </div>
+        <div class="info">
+            <div class="info-header">
+                <i class="fas fa-info-circle text-blue-500"></i>
+                <span>Info</span>
+                </div>
+            </div>
+
+        <div class="faq">
+            <div class="faq-item">
+                <span>Apa itu BMI (IMT)?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-answer hidden">
+                <p>Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang berdasarkan berat dan tinggi badan.</p>
+            </div>
+            <div class="faq-item">
+                <span>Bagaimana cara penilaian BMI?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Mengapa saya harus mengukur BMI?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Apakah BMI yang tinggi menimbulkan risiko kesehatan yang serius?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Obesitas: Apa saja faktor risikonya?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Kekurangan berat badan: Apa faktor risikonya?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Apakah BMI menjadi indikator yang baik dalam mengukur lemak tubuh?</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+            <div class="faq-item">
+                <span>Sumber dan Referensi</span>
+                <i class="fas fa-plus toggle-btn"></i>
+            </div>
+        </div>
+
+        <div class="articles">
+            <h2>Artikel Terkait</h2>
+            <div class="article-container">
+                <div class="article-card">
+                    <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1614664554/attached_image/beragam-manfaat-olahraga-0-alodokter.jpg" alt="Artikel 1">
+                    <h3>14 Manfaat Olahraga untuk Kesehatan Fisik dan Mental</h3>
+                    <p>Manfaat olahraga tidak hanya menunjang kesehatan fisik, tetapi juga baik untuk kesehatan mental. Jika dilakukan secara rutin, olahraga dapat meningkatkan stamina dan daya tahan tubuh bahkan bisa mengatasi stres serta meningkatkan gairah seksual.</p>
+                    <a href="https://www.alodokter.com/beragam-manfaat-olahraga" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1649036128/attached_image/amankah-berolahraga-saat-puasa-0-alodokter.jpg" alt="Artikel 2">
+                    <h3>Amankah Berolahraga Saat Puasa?</h3>
+                    <p>Sebagian orang mungkin ragu untuk berolahraga saat puasa. Alasannya beragam, mulai dari takut lemas, haus yang berlebihan, hingga khawatir dengan keamanan berolahraga saat puasa. Nah, agar tidak bingung, mari simak fakta tentang olahraga saat puasa di artikel ini.</p>
+                    <a href="https://www.alodokter.com/amankah-berolahraga-saat-puasa" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://cdn.hellosehat.com/wp-content/uploads/2016/06/Tips-Olahraga-di-Bulan-Ramadan.jpg?w=640&q=100" alt="Artikel 3">
+                    <h3>7 Tips Olahraga Saat Puasa agar Lebih Mudah dan Optimal</h3>
+                    <p>Berolahraga dan melakukan aktivitas fisik sambil tetap menjalani ibadah puasa memang tidak mudah. Anda mungkin bisa kelelahan bahkan dehidrasi. Namun, tubuh tetap perlu berolahraga agar tetap bugar. Nah, berikut ini tips olahraga saat puasa yang bisa Anda terapkan agar manfaatnya optimal.</p>
+                    <a href="https://hellosehat.com/kebugaran/tips-olahraga-saat-puasa/" target="_blank">Baca Selengkapnya</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://mysiloam-api.siloamhospitals.com/public-asset/website-cms/website-cms-16774684196383384.webp" alt="Artikel 3">
+                    <h3>Ketahui Kebutuhan Protein Harian Tubuh & Cara Menghitungnya</h3>
+                    <p>Kebutuhan protein harian setiap orang berbeda-beda bergantung pada usia, jenis kelamin, serta berat badan. Kendati demikian, Menteri Kesehatan Republik Indonesia mengeluarkan Permenkes mengenai anjuran Angka Kecukupan Gizi (AKG) yang bisa dijadikan sebagai acuan dalam memenuhi kebutuhan protein harian tubuh.</p>
+                    <a href="https://www.siloamhospitals.com/informasi-siloam/artikel/kebutuhan-protein-harian" target="_blank">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Tentang Kami</h2>
+                <p>Healthify adalah platform kesehatan yang didedikasikan untuk membantu Anda mencapai gaya hidup yang lebih sehat dan seimbang. Kami percaya bahwa kesehatan adalah aset terpenting dalam hidup, dan kami berkomitmen untuk memberikan informasi, alat, dan dukungan yang Anda butuhkan untuk mencapai tujuan kesehatan Anda.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Link Cepat</h2>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Hubungi Kami</h2>
+                <p>Email: Healthify@gmail.com</p>
+                <p>Telepon: (021) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Healthify. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="rhr.js"></script>
+
+
+</body>
+</html>

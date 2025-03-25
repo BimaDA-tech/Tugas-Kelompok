@@ -1,0 +1,352 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fbfaf9;
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+header {
+    position: fixed; /* Membuat header tetap di atas */
+    top: 0; /* Posisi header di paling atas */
+    left: 0;
+    width: 100%; /* Agar memenuhi lebar layar */
+    background-color: #FFFFFF; /* Warna tetap */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    padding: 8px 0;
+    z-index: 1000; /* Supaya tidak tertutupi elemen lain */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.search-container input {
+    border: 1px solid #E5E7EB;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    width: 320px;
+}
+
+nav a {
+    color: #4B5563;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+nav img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main {
+    margin-top: 32px;
+}
+.main .content {
+    background-color: #1cda36;
+    padding: 24px;
+    border-radius: 8px;
+}
+.main .content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.main .content p {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.main .content .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.main .content img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main .content .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main .content .info img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.main .content .info span {
+    margin-left: 8px;
+    color: #6b7280;
+}
+.main .content .form {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.date, .gender{
+    width: 30%;
+}
+
+.main .content .form label {
+    display: block;
+    color: #4e634b;
+    margin-bottom: 4px;
+}
+.main .content .form input,
+.main .content .form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #22db4a;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.main .content .form .form-group {
+    display: flex;
+    gap: 16px;
+}
+.main .content .form .form-group .form-control {
+    padding: 8px;
+    flex: 1;
+}
+
+
+.main .content .form button {
+    width: 100px;
+    padding: 12px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+.main .note,
+.main .info {
+    background-color: #d1e7dd;
+    padding: 24px;
+    border-radius: 8px;
+    margin-top: 32px;
+}
+.main .note .note-header,
+.main .info .info-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.main .note .note-header i,
+.main .info .info-header i {
+    font-size: 24px;
+}
+.main .note .note-header span,
+.main .info .info-header span {
+    margin-left: 8px;
+    font-weight: 600;
+    color: #4b5563;
+}
+.main .note p,
+.main .info p {
+    color: #4b5563;
+}
+.main .info h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.info i {
+    color: #007bff;
+    margin-right: 8px;
+}
+.info span {
+    font-weight: bold;
+}
+.faq {
+    border-top: 1px solid #e5e5e5;
+    color: #1250ad;
+}
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e5e5;
+    gap: 16px;
+    width: 700px;
+}
+
+.hidden {
+    display: none;
+}
+
+.faq-answer {
+    padding: 8px 16px;
+    background-color: #f3f4f6;
+    border-left: 4px solid #3b82f6;
+    margin-bottom: 8px;
+    width: 700px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    clear: both;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 10px 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1dd43b;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+#result-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.goal-card {
+    margin-top: 15px;
+    padding: 15px;
+    background: #ffebcd;
+    border-left: 5px solid #ff9800;
+    border-radius: 8px;
+}
+
+
+.articles {
+    margin-top: 40px;
+}
+
+.articles h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.article-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.article-card {
+    background: #b6b1b1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 260px;
+    text-align: center;
+}
+
+.article-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.article-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.article-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.article-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.article-card a:hover {
+    background: #0056b3;
+}
