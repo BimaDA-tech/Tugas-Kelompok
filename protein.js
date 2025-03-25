@@ -23,3 +23,19 @@ function calculateProtein() {
         alert("Mohon masukkan berat badan yang valid.");
     }
 }
+
+document.querySelectorAll('.toggle-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        let answer = this.parentElement.nextElementSibling;
+        answer.classList.toggle('hidden');
+
+        // Ganti ikon "+" menjadi "-" jika terbuka
+        if (answer.classList.contains('hidden')) {
+            this.classList.remove('fa-minus');
+            this.classList.add('fa-plus');
+        } else {
+            this.classList.remove('fa-plus');
+            this.classList.add('fa-minus');
+        }
+    });
+});
